@@ -1,6 +1,7 @@
 class Item:
     pay_rate = 0.8 # The pay rate after 20_# discount
     all = []
+
     def __init__ (self, name:str, price: float, quantity = 0):
 
         # Run validations to received arguments
@@ -23,6 +24,7 @@ class Item:
 
     def __repr__(self):
         return f"Item({self.name}, {self.price}, {self.quantity})"
+
 
 item1 = Item("Phone",100,1)
 item2 = Item("Laptop",1000,3)
