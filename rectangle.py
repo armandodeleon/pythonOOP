@@ -1,6 +1,7 @@
 from random import randint
 import turtle
 
+
 class Point:
 
     def __init__(self, x, y):
@@ -41,20 +42,19 @@ class GuiRectangle(Rectangle):
         canvas.left(90)
         canvas.forward(self.point2.y - self.point1.y)
 
-        turtle.done()
-
 
 class GuiPoint(Point):
 
     def draw(self, canvas, size=5, color='red'):
         canvas.penup()
         canvas.goto(self.x, self.y)
-        canvas. pendown()
+        canvas.pendown()
         canvas.dot(size, color)
+
 
 # Create rectangle object
 rectangle = GuiRectangle(Point(randint(0, 400), randint(0, 400)),
-                      Point(randint(10, 400), randint(10, 400)))
+                         Point(randint(10, 400), randint(10, 400)))
 
 # Print rectangle coordinates
 print("Rectangle Coordinates: ",
@@ -72,6 +72,7 @@ print("Your point was inside rectangle: ", user_point.falls_in_rectangle(rectang
 print("Your area was off by: ", rectangle.area() - user_area)
 
 myturtle = turtle.Turtle()
-rectangle.draw(canvas=myturtle, 5, 'red')
+rectangle.draw(canvas=myturtle)
 
-user_point.draw(canvas=myturtle)
+user_point.draw(canvas=myturtle, size=5, color='red')
+turtle.done()
